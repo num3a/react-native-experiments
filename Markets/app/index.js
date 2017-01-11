@@ -4,33 +4,33 @@ import Wall from './wall';
 
 class App extends Component {
     render(){
-      return (
-        <View style={styles.container}>
+        return (
+            <View style={styles.container}>
 
-          <Wall />
-        </View>
-      );
+              <Wall />
+            </View>
+        );
     }
 }
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#F4FCFF',
-    paddingTop: 50,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: '#F5F5F5',
+        paddingTop: 50,
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    },
+    instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5,
+    },
 });
 
 export default App;
