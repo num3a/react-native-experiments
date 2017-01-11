@@ -5,24 +5,20 @@ class Analysts extends Component {
 
     render(){
         const { analysts } = this.props;
+        const firstAnalysts = analysts[0];
 
-        return <View>
-            {
-                analysts.map((analyst, index) => {
-                    return (
-                        <View style={styles.rowAnalyst} key={index}>
+        return (
+            <View style={styles.rowAnalyst} >
 
-                            <View style={styles.rowAnalystDetails} key={analyst.id}>
-                                <Image
-                                    style={styles.rowAnalystImage}
-                                    source={{uri: analyst.photoUrl}}
-                                />
-                                <Text style={styles.rowAnalystName}>{analyst.name}</Text>
-                            </View>
-                        </View>);
-                })
-            }
-        </View>;
+                <View style={styles.rowAnalystDetails} key={firstAnalysts.id}>
+                    <Image
+                        style={styles.rowAnalystImage}
+                        source={{uri: firstAnalysts.photoUrl}}
+                    />
+                    <Text style={styles.rowAnalystName}>{firstAnalysts.name}</Text>
+                </View>
+            </View>);
+
     }
 }
 
