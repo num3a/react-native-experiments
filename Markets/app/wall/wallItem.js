@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableHighlight } from 'react-native';
 import Analysts from './analysts';
 import PublicationDetails from './publicationDetails';
 
 class WallItem extends Component{
-
+    _onWallItemPress(item){
+        alert(item.title);
+    }
     render(){
         const { item } = this.props;
-        return (<View key={item.id} style={styles.row}>
-            <Text style={styles.rowResearchCategory}>{item.researchCategory}</Text>
-            <Text style={styles.rowTitle}>{item.title}</Text>
-            <Analysts analysts={item.analysts} />
-            <PublicationDetails/>
+        return (<View key={item.id} >
+            <TouchableHighlight
+                onPress={() => this._onWallItemPress(item)}
+                underlayColor="transparent"
+            >
+                <View style={styles.row}>
+                    <Text style={styles.rowResearchCategory}>{item.researchCategory}</Text>
+                    <Text style={styles.rowTitle}>{item.title}</Text>
+                    <PublicationDetails/>
+                    <Analysts analysts={item.analysts} />
+                </View>
+            </TouchableHighlight>
         </View>);
     }
 }
